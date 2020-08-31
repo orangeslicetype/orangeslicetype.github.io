@@ -59,7 +59,7 @@ export default () => {
         </a>
         ,{' '}
         <a
-          href='https://twitter.com/orangeslicetype'
+          href='https://instagram.com/orangeslicetype'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -67,7 +67,7 @@ export default () => {
         </a>
         ,{' '}
         <a
-          href='https://instagram.com/orangeslicetype'
+          href='https://twitter.com/orangeslicetype'
           target='_blank'
           rel='noopener noreferrer'
         >
