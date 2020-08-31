@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/static/js/main.83f00c92.chunk.js",
+    "main.js.map": "/static/js/main.83f00c92.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7e4cedf3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7e4cedf3.js.map",
+    "static/js/2.634961d2.chunk.js": "/static/js/2.634961d2.chunk.js",
+    "static/js/2.634961d2.chunk.js.map": "/static/js/2.634961d2.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a6a5530236d4a862421611b7060d7d31.js": "/precache-manifest.a6a5530236d4a862421611b7060d7d31.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.634961d2.chunk.js.LICENSE.txt": "/static/js/2.634961d2.chunk.js.LICENSE.txt",
+    "static/media/OSGroteskWeb-Regular.ttf": "/static/media/OSGroteskWeb-Regular.3652d7aa.ttf",
+    "static/media/OSGroteskWeb-Regular.woff2": "/static/media/OSGroteskWeb-Regular.a46d64f6.woff2",
+    "static/media/OSGroteskWeb-Regular.eot": "/static/media/OSGroteskWeb-Regular.a4d33fb8.eot",
+    "static/media/OSGroteskWeb-Regular.woff": "/static/media/OSGroteskWeb-Regular.eee8417c.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e4cedf3.js",
+    "static/js/2.634961d2.chunk.js",
+    "static/js/main.83f00c92.chunk.js"
+  ]
+}
