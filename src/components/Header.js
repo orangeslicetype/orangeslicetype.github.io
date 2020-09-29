@@ -1,7 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { memo } from 'react';
+import styled, { css } from 'styled-components';
+import { useSliderDispatch, useSliderState } from '../context/slider';
 
-const Header = styled.header`
+import icoPrev from '../images/ico-prev@2x.png';
+import icoNext from '../images/ico-next@2x.png';
+import icoClose from '../images/ico-close@2x.png';
+
+const HeaderBlock = styled.header`
   position: fixed;
   top: 20px;
   left: 20px;
@@ -23,6 +28,28 @@ const Paragraph = styled.p`
   }
 `;
 
+const Button = styled.button`
+  padding: 2px;
+  color: #0000ff;
+  border: 1px solid #00f;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: #00f;
+    color: #fff;
+  }
+
+  ${(props) =>
+    props.active &&
+    css`
+      background-color: #00f;
+      color: #fff;
+    `}
+`;
+
 const Address = styled.address`
   margin-top: 18px;
   color: #0000ff;
@@ -31,9 +58,78 @@ const Address = styled.address`
   font-style: normal;
 `;
 
-export default () => {
+
+const SliderController = styled.div`
+  margin-top: 50px;
+
+  button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: 1px solid #00f;
+    outline: none;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+  }
+
+  button + button {
+    margin-left: -1px;
+  }
+
+  .prev {
+    &:after {
+      width: 18px;
+      height: 17px;
+      background-image: url(${icoPrev});
+    }
+  }
+  .next {
+    &:after {
+      width: 18px;
+      height: 17px;
+      background-image: url(${icoNext});
+    }
+  }
+  .close {
+    &:after {
+      width: 19px;
+      height: 17px;
+      background-image: url(${icoClose});
+    }
+  }
+`;
+
+const Header = () => {
+  const { visible } = useSliderState();
+  const dispatch = useSliderDispatch();
+
+  const goPrev = () => {
+    console.log('prev');
+  };
+
+  const goNext = () => {
+    console.log('next');
+  };
+
+  const toggleSlider = () => {
+    dispatch({
+      type: 'TOGGLE',
+    });
+  };
+
   return (
-    <Header>
+    <HeaderBlock>
       <Paragraph>
         Orange Slice Type <br />
         is an Amsterdam based type foundry <br />
@@ -41,7 +137,12 @@ export default () => {
         The web version of the catalogue is now in <br />
         development together with webshop. <br />
         Both are hopefully going to be live before <br />
-        COVID-19 pandemic ends.
+        COVID-19 pandemic ends. You can see a <br />
+        sneak preview of our typeface library and <br />
+        typefaces in use{' '}
+        <Button type='button' active={visible ? 1 : 0} onClick={toggleSlider}>
+          HERE
+        </Button>
       </Paragraph>
       <Paragraph>
         If you ever have any questions about <br />
@@ -79,6 +180,21 @@ export default () => {
         1013 EC Amsterdam <br />
         The Netherlands
       </Address>
-    </Header>
+      {visible && (
+        <SliderController>
+          <button className='prev' onClick={goPrev}>
+            <span className='sr-only'>Previous</span>
+          </button>
+          <button className='next' onClick={goNext}>
+            <span className='sr-only'>Next</span>
+          </button>
+          <button className='close' onClick={toggleSlider}>
+            <span className='sr-only'>Close</span>
+          </button>
+        </SliderController>
+      )}
+    </HeaderBlock>
   );
 };
+
+export default memo(Header);

@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { SliderProvider } from './context/slider';
 
 import OSGrotesk_eot from './fonts/OSGroteskWeb-Regular.eot';
 import OSGrotesk_ttf from './fonts/OSGroteskWeb-Regular.ttf';
@@ -46,15 +47,26 @@ const GlobalStyles = createGlobalStyle`
   #root {
     height: 100%;
   }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 `;
 
 function App() {
   return (
-    <>
+    <SliderProvider>
       <GlobalStyles />
       <Header />
       <Footer />
-    </>
+    </SliderProvider>
   );
 }
 
