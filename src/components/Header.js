@@ -10,6 +10,7 @@ const HeaderBlock = styled.header`
   position: fixed;
   top: 20px;
   left: 20px;
+  z-index: 10;
 `;
 
 const Paragraph = styled.p`
@@ -111,15 +112,15 @@ const SliderController = styled.div`
 `;
 
 const Header = () => {
-  const { visible } = useSliderState();
+  const { visible, slider } = useSliderState();
   const dispatch = useSliderDispatch();
 
   const goPrev = () => {
-    console.log('prev');
+    slider && slider.slidePrev();
   };
 
   const goNext = () => {
-    console.log('next');
+    slider && slider.slideNext();
   };
 
   const toggleSlider = () => {

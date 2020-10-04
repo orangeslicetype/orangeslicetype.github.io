@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Slider from './components/Slider';
 import { SliderProvider } from './context/slider';
 
 import OSGrotesk_eot from './fonts/OSGroteskWeb-Regular.eot';
@@ -30,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    padding: 60px 0 0;
+    padding: 0;
     font-size: 14px;
     font-family: 'OS Grotesk', sans-serif;
     background-color: #fff;
@@ -64,6 +65,7 @@ function App() {
   return (
     <SliderProvider>
       <GlobalStyles />
+      <Slider />
       <Header />
       <Footer />
     </SliderProvider>

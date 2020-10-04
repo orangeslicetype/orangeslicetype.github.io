@@ -2,13 +2,15 @@ import React, { createContext, useReducer, useContext } from 'react';
 
 const initialSliderState = {
   visible: false,
-  current: 0,
+  slider: null,
 };
 
 function sliderReducer(state, action) {
   switch (action.type) {
+    case 'SET':
+      return { ...state, slider: action.slider };
     case 'TOGGLE':
-      return {...state, visible: !state.visible };
+      return { ...state, visible: !state.visible };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
