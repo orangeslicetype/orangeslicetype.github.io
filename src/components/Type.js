@@ -91,7 +91,7 @@ const BlockItem = styled.div`
   background-repeat: no-repeat;
   background-image: ${(props) =>
     `url(
-      ${process.env.PUBLIC_URL}/images/${props.gray * 10}_${props.ptrn}.svg
+      /images/${props.gray * 10}_${props.ptrn}.svg
     )`};
 `;
 
