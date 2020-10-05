@@ -5,7 +5,6 @@ const Footer = styled.footer`
   position: fixed;
   bottom: 20px;
   left: 20px;
-  z-index: 10;
 `;
 
 const Paragraph = styled.p`
