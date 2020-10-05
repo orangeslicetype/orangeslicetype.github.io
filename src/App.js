@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Type from './components/Type';
 import Slider from './components/Slider';
 import { SliderProvider } from './context/slider';
 
@@ -47,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
   body,
   #root {
     height: 100%;
+    overflow: hidden;
   }
 
   .sr-only {
@@ -65,6 +67,7 @@ function App() {
   return (
     <SliderProvider>
       <GlobalStyles />
+      <Type />
       <Slider />
       <Header />
       <Footer />
