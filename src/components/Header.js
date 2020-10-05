@@ -138,12 +138,7 @@ const Header = () => {
         The web version of the catalogue is now in <br />
         development together with webshop. <br />
         Both are hopefully going to be live before <br />
-        COVID-19 pandemic ends. You can see a <br />
-        sneak preview of our typeface library and <br />
-        typefaces in use{' '}
-        <Button type='button' active={visible ? 1 : 0} onClick={toggleSlider}>
-          HERE
-        </Button>
+        COVID-19 pandemic ends.
       </Paragraph>
       <Paragraph>
         If you ever have any questions about <br />
