@@ -47,13 +47,11 @@ const Wrapper = styled.div`
   bottom: 0;
   left: 0;
   overflow: hidden;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
 `;
 
 const Grid = styled.div.attrs((props) => ({
   style: {
-    transform: `scale(${props.zoom.toPrecision(3)})`,
+    transform: `translateZ(0) scale(${props.zoom.toPrecision(3)})`,
   },
 }))`
   display: grid;
@@ -66,6 +64,7 @@ const Grid = styled.div.attrs((props) => ({
   align-content: center;
   justify-items: stretch;
   align-items: stretch;
+  backface-visibility: hidden;
 
   ${(props) =>
     props.zoom >= 8
@@ -97,13 +96,13 @@ const BlockItem = styled.div`
 
 const Info = styled.div`
   position: fixed;
-  bottom: 18px;
-  left: 0;
-  right: 0;
+  bottom: 20px;
+  left: 50%;
   color: #0000ff;
   font-size: 14px;
   line-height: 1.29;
   text-align: center;
+  transform: translateX(-50%);
   z-index: 20;
 
   .name {
